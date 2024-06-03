@@ -1,13 +1,11 @@
 class Solution {
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
-        int i=0,ans=0;
-        int mid=(nums.length-1)/2;
-
-        while(i<nums.length){
-            ans+=Math.abs(nums[mid]-nums[i]);
-            i++;
+        int i = 0, j = nums.length - 1;
+        int count = 0;
+        while (i < j) {
+            count += nums[j--] - nums[i++];
         }
-        return ans;
+        return count;
     }
 }
